@@ -1,18 +1,18 @@
+Install QEMU so we can run a Virtual Machine:
 
 ```bash
 sudo apt-get install qemu-system
 ```
 
-Create the initiam ramdisk:
+Launch the kernel:
 
 ```bash
-sudo mkinitramfs -o myinitramfs
-```
-
-Create the disk
-
-```bash
-qemu-system-x86_64 ...
+qemu-system-x86_64 \
+    -m 2048M \
+    -kernel kernel/arch/x86/boot/bzImage \
+    -nographic \
+    -serial mon:stdio \
+    -append "console=ttyS0"
 ```
 
 You should see an error like this:
@@ -42,3 +42,18 @@ You should see an error like this:
 [    1.175233] Kernel Offset: 0x2d800000 from 0xffffffff81000000 (relocation range: 0xffffffff80000000-0xffffffffbfffffff)
 [    1.176104] ---[ end Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(0,0) ]---
 ```
+
+Congratulations, you are runnning your kernel! You can confirm it by checking the first line of the output:
+
+```
+SeaBIOS (version 1.15.0-1)
+
+iPXE (https://ipxe.org) 00:03.0 CA00 PCI2.10 PnP PMM+7FF8B340+7FECB340 CA00
+
+
+Booting from ROM..
+[    0.000000] Linux version 5.19.0-rc7-g70664fc10c0d (azis@azis-ubuntu) (gcc (Ubuntu 11.2.0-19ubuntu1) 11.2.0, GNU ld (GNU Binutils for Ubuntu) 2.38) #8 SMP PREEMPT_DYNAMIC Mon Jul 25 19:55:05 PDT 2022
+[    0.000000] Command line: console=ttyS0
+```
+
+To quit, press `CTRL+A C` to move to the QEMU monitor and then `q` and `ENTER`.

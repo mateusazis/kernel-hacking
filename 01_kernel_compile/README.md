@@ -24,3 +24,9 @@ Use the `-j` flag to control the number of parallel tasks to use. It greatly imp
 ```bash
 make -j$(nproc)
 ```
+
+The last line of the output will show where the compiled kernel image is:
+
+```
+Kernel: arch/x86/boot/bzImage is ready  (#8)
+```
