@@ -30,3 +30,9 @@ The last line of the output will show where the compiled kernel image is:
 ```
 Kernel: arch/x86/boot/bzImage is ready  (#8)
 ```
+
+5.  Leave the kernel directory so we can continue from there.
+
+```bash
+cd ..
+```
