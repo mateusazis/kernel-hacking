@@ -9,7 +9,7 @@ So the kernel wants to run `/init`, the process with PID 1. It should be on the 
 
 The solution? Load a temporary root filesystem that gives the kernel minimal access to the disk and then switch root to that disk.
 
-That initial filesystem is called **initrd**. You can find Ubuntu's in `/boot/initrd.img` (a symlink to a versioned image).
+That initial filesystem is called **initrd**. You can find Ubuntu's in `/boot/initrd.img` (a symlink to a versioned image). It will get decrompressed and loaded into the system's RAM, so it is desirable to keep it small specially for resource-constrained devices.
 
 1.  Make a directory for our initial filesystem.
 
