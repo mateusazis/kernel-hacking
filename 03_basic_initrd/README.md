@@ -55,7 +55,7 @@ That initial filesystem is called **initrd**. You can find Ubuntu's in `/boot/in
     ```bash
     qemu-system-x86_64 \
         -m 2048M \
-        -kernel kernel/arch/x86/boot/bzImage \
+        -kernel linux-5.19/arch/x86/boot/bzImage \
         -initrd initial_filesystem/initrd.cpio.gz \
         -nographic \
         -serial mon:stdio \

@@ -117,7 +117,7 @@ This time, we will create a QEMU disk image to represent a hard disk drive that 
         --enable-kvm \
         -cpu host \
         -initrd busybox-1.35.0/_install/initrd.cpio.gz \
-        -kernel kernel/arch/x86/boot/bzImage \
+        -kernel linux-5.19/arch/x86/boot/bzImage \
         -hda primary_disk.img \
         -nographic \
         -serial mon:stdio \

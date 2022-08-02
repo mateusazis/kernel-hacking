@@ -40,7 +40,7 @@ qemu-system-x86_64 \
     --enable-kvm \
     -cpu host \
     -initrd busybox-1.35.0/_install/initrd.cpio.gz \
-    -kernel kernel/arch/x86/boot/bzImage \
+    -kernel linux-5.19/arch/x86/boot/bzImage \
     -nographic \
     -serial mon:stdio \
     -append "console=ttyS0"
@@ -80,7 +80,7 @@ qemu-system-x86_64 \
     --enable-kvm \
     -cpu host \
     -initrd busybox-1.35.0/_install/initrd.cpio.gz \
-    -kernel kernel/arch/x86/boot/bzImage \
+    -kernel linux-5.19/arch/x86/boot/bzImage \
     -nographic \
     -serial mon:stdio \
     -append "console=ttyS0 rdinit=/bin/sh"

@@ -1,13 +1,14 @@
 1.  Download the latest kernel
 
 ```bash
-git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git --depth=1 kernel
+wget https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.19.tar.xz
+tar -xzf linux-5.19.tar.xz
 ```
 
 2.  Move into the kernel's directory
 
 ```bash
-cd kernel
+cd linux-5.19
 ```
 
 3.  Setup a minimal kernel configuration.

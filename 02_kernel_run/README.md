@@ -9,7 +9,7 @@ Launch the kernel:
 ```bash
 qemu-system-x86_64 \
     -m 2048M \
-    -kernel kernel/arch/x86/boot/bzImage \
+    -kernel linux-5.19/arch/x86/boot/bzImage \
     -nographic \
     -serial mon:stdio \
     -append "console=ttyS0"
