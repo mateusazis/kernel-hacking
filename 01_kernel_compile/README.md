@@ -2,7 +2,7 @@
 
 ```bash
 wget https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.19.tar.xz
-tar -xzf linux-5.19.tar.xz
+tar -xf linux-5.19.tar.xz
 ```
 
 2.  Move into the kernel's directory
