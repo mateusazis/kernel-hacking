@@ -12,13 +12,12 @@ But doing so in C can be quite exhausting. Instead, let's install a minimal shel
 1.  Configure it
     ```bash
     (cd busybox-1.35.0 && make defconfig)
-    (cd busybox-1.35.0 && make menuconfig)
     ```
 
-    On the configurations menu, select *Settings -> Build static binary (no shared libs)*. This will have a similar effect to the `-static` flag given to our "hello world" `init`.\* 
+    Build Busybox and install it. Note the `--static` flag passed to the linker. This will have a similar effect to the one given to our "hello world" `init`.\* 
 
     ```
-    (cd busybox-1.35.0 && make -j$(nproc))
+    (cd busybox-1.35.0 && LDFLAGS=--static make -j$(nproc))
     (cd busybox-1.35.0 && make install)
     ```
 
