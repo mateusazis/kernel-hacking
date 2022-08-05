@@ -101,10 +101,12 @@ This time, we will create a QEMU disk image to represent a hard disk drive that 
 
 1.  Rebuild `initrd`'s CPIO archive.
 
+    ```bash
     (cd busybox-1.35.0/_install && \
       find . -print0 \
       | cpio --null -ov --format=newc \
       | gzip -9 > initrd.cpio.gz)
+    ```
 
 1.  Run QEMU.
 
