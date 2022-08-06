@@ -59,7 +59,7 @@ This time, we will create a QEMU disk image to represent a hard disk drive that 
 1.  Create an `init` file in the disk's root as a symlink to `/bin/sh`.
 
     ```bash
-    ln -s /bin/sh /mnt/init
+    ln -s /bin/busybox /mnt/init
     ```
 
 1.  Our disk is ready. Let's unmount it and disconnect the device.
