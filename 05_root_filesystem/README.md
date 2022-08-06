@@ -126,7 +126,22 @@ This time, we will create a QEMU disk image to represent a hard disk drive that 
         -append "console=ttyS0"
     ```
 
-1.  When the console starts, you can see that the report disk usage to see that our disk is indeed mounted as root:
+1.  The first output from init you will see is then:
+  
+    ```
+    Please press Enter to activate this console.
+    ```
+
+    And then pressing ENTER will take you to a working shell. Interestingly, you're not under PID 1 anymore:
+
+    ```bash
+    echo $$
+    82
+    ```
+
+    That's because when Busybox is invoked as `init`, its default behavior is to look for some configuration files indicating services to startup and then fork into a shell. If you really wanted to run just a shell as PID1, we could have done `exec switch_root /mnt /init`.
+
+1.  You can see that the report disk usage to see that our disk is indeed mounted as root:
 
     ```bash
     df
