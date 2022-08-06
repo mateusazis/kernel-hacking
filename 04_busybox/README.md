@@ -17,8 +17,8 @@ But doing so in C can be quite exhausting. Instead, let's install a minimal shel
     Build Busybox and install it. Note the `--static` flag passed to the linker. This will have a similar effect to the one given to our "hello world" `init`.\* 
 
     ```
-    (cd busybox-1.35.0 && LDFLAGS=--static make -j$(nproc))
-    (cd busybox-1.35.0 && make install)
+    (cd busybox-1.35.0 && make LDFLAGS="--static" -j$(nproc))
+    (cd busybox-1.35.0 && make LDFLAGS="--static" install)
     ```
 
 1.  `busybox-1.35.0/_install` will now contain a directory structure similar to a initrd filesystem. Let's build the CPIO archive:
