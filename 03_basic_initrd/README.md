@@ -35,7 +35,7 @@ That initial filesystem is called **initrd**. You can find Ubuntu's in `/boot/in
     EOT
     ```
 
-1.  Build it. Note the `-static` flag: we do not want to depend on any shared library! This binary should be able to run on its own.
+1.  Build it. Note the `-static` flag: we do not want to depend on any shared library! Our system has no libc nor a [dynamic linker](https://man7.org/linux/man-pages/man8/ld.so.8.html). Trying to run a binary with dynamic linking would yield a cryptic "No such file" (ENOENT) error.
 
 
     ```bash
