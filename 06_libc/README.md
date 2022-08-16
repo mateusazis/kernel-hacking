@@ -75,7 +75,7 @@ The [GNU C Library](https://www.gnu.org/software/libc/libc.html) provides the ba
 
     But of course that is not scalable to every process invocation.
 
-1.  Now, the shared libraries. GLIBC is present in the guest's `/lib`. The documentation for [ld.so][https://man7.org/linux/man-pages/man8/ld.so.8.html] mentions that it looks for shared libraries in the following order:
+1.  Now, the shared libraries. GLIBC is present in the guest's `/lib`. The documentation for [ld.so](https://man7.org/linux/man-pages/man8/ld.so.8.html) mentions that it looks for shared libraries in the following order:
 
     1. (deprecated) directories in the DT_RPATH section of the binary
     1. directories in the LD_LIBRARY_PATH environment variable (this is more commonly used for testing/development)
