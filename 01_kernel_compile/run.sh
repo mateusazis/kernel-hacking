@@ -1,4 +1,5 @@
 #! /bin/bash
+set -e
 
 wget https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.19.tar.xz
 tar -xf linux-5.19.tar.xz

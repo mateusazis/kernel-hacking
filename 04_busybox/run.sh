@@ -1,4 +1,6 @@
 #! /bin/bash
+set -e
+
 wget https://busybox.net/downloads/busybox-1.35.0.tar.bz2
 tar -xf busybox-1.35.0.tar.bz2
 

@@ -1,4 +1,5 @@
 #! /bin/bash
+set -e
 
 qemu-img create -f qcow2 primary_disk.img 8G
 
