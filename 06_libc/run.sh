@@ -15,7 +15,7 @@ mkdir -p glibc_build
 (cd glibc_build && make -j$(nproc))
 (cd glibc_build && make install)
 
-gcc initial_filesystem/init.c -o /mnt/hello_dynamic
+gcc ./03_basic_initrd/init.c -o /mnt/hello_dynamic
 
 mkdir -p /mnt/lib64
 ln --symbolic /lib/ld-linux-x86-64.so.2 /mnt/lib64/ld-linux-x86-64.so.2

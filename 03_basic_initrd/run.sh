@@ -2,23 +2,11 @@
 set -e
 
 
-mkdir initial_filesystem
+mkdir -p initial_filesystem
+
+gcc -static -o initial_filesystem/init ./03_basic_initrd/init.c
+
 cd initial_filesystem
-
-cat << EOT >> init.c
-#include <stdio.h>
-#include <unistd.h>
-
-int main(int argc, char** argv) {
-  printf("Hello world\n");
-  while (1) {
-    sleep(99999);
-  }
-  return 0;
-}
-EOT
-
-gcc -static -o init init.c
 
 find . -print0 \
   | cpio --null -ov --format=newc \
